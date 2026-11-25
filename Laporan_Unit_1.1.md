@@ -48,10 +48,9 @@ SELECT version();
 ```
 
 **Hasil eksekusi:**
-<img width="496" height="221" alt="image" src="https://github.com/user-attachments/assets/55a2c0bf-1e1b-411a-bb60-eba2417550a1" />
 
 ```text
-
+<img width="496" height="221" alt="image" src="https://github.com/user-attachments/assets/55a2c0bf-1e1b-411a-bb60-eba2417550a1" />
 ```
 
 **Interpretasi:**
@@ -281,42 +280,42 @@ Langkah impor yang dilakukan:
 4. Periksa preview serta pemetaan kolom sumber ke kolom tujuan.
 5. Klik Proceed dan tunggu sampai proses selesai.
 
-```sql
-\copy src.program_studi FROM '/PATH/UADW_v1.0/01_raw_data/program_studi.csv' CSV HEADER ENCODING 'UTF8';
-\copy src.semester      FROM '/PATH/UADW_v1.0/01_raw_data/semester.csv'      CSV HEADER ENCODING 'UTF8';
-\copy src.mahasiswa     FROM '/PATH/UADW_v1.0/01_raw_data/mahasiswa.csv'     CSV HEADER ENCODING 'UTF8';
-\copy src.dosen         FROM '/PATH/UADW_v1.0/01_raw_data/dosen.csv'         CSV HEADER ENCODING 'UTF8';
-\copy src.mata_kuliah   FROM '/PATH/UADW_v1.0/01_raw_data/mata_kuliah.csv'   CSV HEADER ENCODING 'UTF8';
-\copy src.krs           FROM '/PATH/UADW_v1.0/01_raw_data/krs.csv'           CSV HEADER ENCODING 'UTF8';
-\copy src.nilai         FROM '/PATH/UADW_v1.0/01_raw_data/nilai.csv'         CSV HEADER ENCODING 'UTF8';
-\copy src.aktivitas_lms FROM '/PATH/UADW_v1.0/01_raw_data/aktivitas_lms.csv' CSV HEADER ENCODING 'UTF8';
-\copy src.pembayaran    FROM '/PATH/UADW_v1.0/01_raw_data/pembayaran.csv'    CSV HEADER ENCODING 'UTF8';
-\copy src.kelulusan     FROM '/PATH/UADW_v1.0/01_raw_data/kelulusan.csv'     CSV HEADER ENCODING 'UTF8';
-```
+| No. | File CSV | Tabel Tujuan |
+|-----|-----|-----|
+| 1.  | program_studi.csv | src.program_studi |
+| 2.  | semester.csv | src.semester |
+| 3.  | mahasiswa.csv | src.mahasiswa |
+| 4.  | dosen.csv | src.dosen |
+| 5.  | mata_kuliah.csv	| src.mata_kuliah |
+| 6.  | krs.csv	| src.krs |
+| 7.  | nilai.csv | src.nilai |
+| 8.  | aktivitas_lms.csv | src.aktivitas_lms |
+| 9.  | pembayaran.csv | src.pembayaran |
+| 10. | kelulusan.csv | src.kelulusan |
 
-### 3.2 Catatan proses impor
+## Bukti proses impor: hasil verifikasi jumlah record pada masing-masing tabel setelah impor ditunjukkan pada Gambar 8 (lihat juga bagian 3.2 dan 6).
+
+## 3.2 Catatan proses impor
 
 | No. | File CSV | Tabel tujuan | Status impor | Jumlah baris yang dilaporkan saat impor | Catatan/error |
 |---:|---|---|---|---:|---|
-| 1 | `program_studi.csv` | `src.program_studi` |  |  |  |
-| 2 | `semester.csv` | `src.semester` |  |  |  |
-| 3 | `mahasiswa.csv` | `src.mahasiswa` |  |  |  |
-| 4 | `dosen.csv` | `src.dosen` |  |  |  |
-| 5 | `mata_kuliah.csv` | `src.mata_kuliah` |  |  |  |
-| 6 | `krs.csv` | `src.krs` |  |  |  |
-| 7 | `nilai.csv` | `src.nilai` |  |  |  |
-| 8 | `aktivitas_lms.csv` | `src.aktivitas_lms` |  |  |  |
-| 9 | `pembayaran.csv` | `src.pembayaran` |  |  |  |
-| 10 | `kelulusan.csv` | `src.kelulusan` |  |  |  |
+| 1 | `program_studi.csv` | `src.program_studi` | berhasil | 6 |  |
+| 2 | `semester.csv` | `src.semester` | berhasil | 8 |  |
+| 3 | `mahasiswa.csv` | `src.mahasiswa` | berhasil | 1.965 |  |
+| 4 | `dosen.csv` | `src.dosen` | berhasil | 96 |  |
+| 5 | `mata_kuliah.csv` | `src.mata_kuliah` | berhasil | 208 |  |
+| 6 | `krs.csv` | `src.krs` | berhasil | 57.025 |  |
+| 7 | `nilai.csv` | `src.nilai` | berhasil | 57.000 |  |
+| 8 | `aktivitas_lms.csv` | `src.aktivitas_lms` | berhasil | 200.356 |  |
+| 9 | `pembayaran.csv` | `src.pembayaran` | berhasil | 9.500 |  |
+| 10 | `kelulusan.csv` | `src.kelulusan` | berhasil | 347 |  |
 
-**Bukti proses impor:**
+**Bukti proses impor:**hasil query verifikasi jumlah record seluruh tabel setelah impor.
 
-[Tempelkan tangkapan layar atau keluaran proses impor di sini]
+<img width="606" height="451" alt="image" src="https://github.com/user-attachments/assets/df7a5174-b774-43d6-9b63-aee5d9792f1b" />
 
-**Interpretasi:** Jelaskan apakah seluruh file berhasil diimpor dan bagaimana Anda memastikan nilai raw tetap dipertahankan.
 
-................................................................................
-................................................................................
+**Interpretasi:** Proses impor sepuluh file CSV ke tabel tujuan pada schema src berhasil dilakukan melalui fitur Import Data di DBeaver. Berdasarkan catatan hasil impor, jumlah baris yang masuk berkisar dari 6 baris pada program_studi hingga 200.356 baris pada aktivitas_lms. Jumlah tersebut selanjutnya diverifikasi kembali menggunakan query COUNT(*) agar dapat dipastikan bahwa data telah termuat sesuai jumlah yang dilaporkan.
 
 ---
 
@@ -338,23 +337,11 @@ ORDER BY table_name;
 
 **Hasil eksekusi:**
 
-| table_schema | table_name |
-|---|---|
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
+<img width="497" height="457" alt="image" src="https://github.com/user-attachments/assets/111eb339-0c21-4805-9f17-04009eb1166c" />
 
-**Interpretasi:**
 
-................................................................................
-................................................................................
+
+**Interpretasi:** Schema src berisi 10 base table yang sesuai dengan sepuluh dataset praktikum, sehingga source layer lengkap.
 
 ---
 
@@ -380,18 +367,11 @@ ORDER BY tabel;
 
 **Hasil eksekusi:**
 
-| tabel | jumlah_baris |
-|---|---:|
-| `program_studi` |  |
-| `semester` |  |
-| `mahasiswa` |  |
-| `dosen` |  |
-| `mata_kuliah` |  |
+<img width="595" height="360" alt="image" src="https://github.com/user-attachments/assets/343d4e35-9aee-4673-90cb-46a231159bac" />
 
-**Interpretasi:** Bandingkan jumlah baris aktual dengan jumlah yang diharapkan berdasarkan dataset yang digunakan. Jelaskan apabila terdapat perbedaan.
 
-................................................................................
-................................................................................
+
+**Interpretasi:**  Lima tabel master/reference berhasil diverifikasi memiliki jumlah baris yang berbeda sesuai fungsinya. Tabel mahasiswa berisi 1.965 baris, mata_kuliah 208 baris, dosen 96 baris, semester 8 baris, dan program_studi 6 baris. Hasil ini menunjukkan bahwa data pada kelima tabel telah tersedia dan dapat digunakan sebagai sumber referensi untuk proses profiling berikutnya.
 
 ---
 
@@ -417,23 +397,11 @@ ORDER BY tabel;
 
 **Hasil eksekusi:**
 
-| Dataset | Jumlah baris aktual | Jumlah baris acuan (bila tersedia) | Status/catatan |
-|---|---:|---:|---|
-| `program_studi` |  | 6 |  |
-| `semester` |  | 8 |  |
-| `mahasiswa` |  | 1.965 |  |
-| `dosen` |  | 96 |  |
-| `mata_kuliah` |  | 208 |  |
-| `krs` |  | 57.025 |  |
-| `nilai` |  | 57.000 |  |
-| `aktivitas_lms` |  | 200.356 |  |
-| `pembayaran` |  | 9.500 |  |
-| `kelulusan` |  | 347 |  |
+<img width="624" height="451" alt="image" src="https://github.com/user-attachments/assets/b546b3dc-f4d5-4823-be6d-50a687603df5" />
 
-**Interpretasi:** Jelaskan hasil verifikasi jumlah baris dan kemungkinan penyebab apabila jumlah aktual berbeda dari nilai acuan.
 
-................................................................................
-................................................................................
+
+**Interpretasi:** Seluruh tabel memiliki jumlah baris yang sama dengan nilai acuan, sehingga pemuatan dinilai lengkap. Tidak ada tabel yang kosong atau kekurangan baris.
 
 ---
 
@@ -455,23 +423,11 @@ ORDER BY table_name;
 
 **Hasil eksekusi:**
 
-| table_name | jumlah_kolom |
-|---|---:|
-| `aktivitas_lms` |  |
-| `dosen` |  |
-| `kelulusan` |  |
-| `krs` |  |
-| `mahasiswa` |  |
-| `mata_kuliah` |  |
-| `nilai` |  |
-| `pembayaran` |  |
-| `program_studi` |  |
-| `semester` |  |
+<img width="515" height="465" alt="image" src="https://github.com/user-attachments/assets/0464e214-fd84-43e1-820e-75225d59d859" />
 
-**Interpretasi:**
 
-................................................................................
-................................................................................
+
+**Interpretasi:** Berdasarkan hasil query, jumlah kolom pada setiap tabel berada pada rentang 5 sampai 11 kolom. Tabel mahasiswa memiliki jumlah kolom terbanyak, yaitu 11 kolom, sedangkan program_studi memiliki jumlah kolom paling sedikit, yaitu 5 kolom. Jumlah kolom tersebut sesuai dengan struktur source yang digunakan dalam praktikum.
 
 ---
 
@@ -494,24 +450,17 @@ ORDER BY ordinal_position;
 
 **Hasil eksekusi:**
 
-| ordinal_position | column_name | data_type |
-|---:|---|---|
-| 1 |  |  |
-| 2 |  |  |
-| 3 |  |  |
-| 4 |  |  |
-| 5 |  |  |
-| 6 |  |  |
-| 7 |  |  |
-| 8 |  |  |
-| 9 |  |  |
-| 10 |  |  |
-| 11 |  |  |
+<img width="508" height="484" alt="image" src="https://github.com/user-attachments/assets/ccc6604c-58d0-470e-ab18-c9f0d2451d33" />
 
-**Interpretasi:** Jelaskan apakah struktur tabel dan tipe data telah sesuai dengan definisi source pada bahan praktikum.
 
-................................................................................
-................................................................................
+**Interpretasi:** **Interpretasi:**
+
+Berdasarkan hasil verifikasi struktur tabel mahasiswa menggunakan query pada `information_schema.columns`, diperoleh bahwa tabel mahasiswa memiliki 11 kolom dengan urutan yang sesuai, yaitu `nim`, `nama`, `jk_raw`, `tanggal_lahir_raw`, `kota_asal_raw`, `kode_prodi_raw`, `prodi_raw`, `angkatan`, `tanggal_masuk_raw`, `status_raw`, dan `email_kampus`.
+
+Hasil pemeriksaan menunjukkan bahwa sebagian besar kolom menggunakan tipe data `character varying`, sedangkan kolom `angkatan` menggunakan tipe data `integer`. Tipe data `character varying` digunakan untuk menyimpan data berbentuk teks, sementara tipe data `integer` digunakan untuk menyimpan bilangan bulat.
+
+Dengan demikian, struktur tabel mahasiswa telah terbentuk dengan 11 kolom dan tipe data yang dapat digunakan untuk menampung informasi mahasiswa sesuai dengan fungsi masing-masing kolom. Perbedaan tampilan tipe data `character varying` dengan `text` tidak menunjukkan kesalahan, karena keduanya merupakan tipe data teks pada PostgreSQL. Oleh karena itu, hasil verifikasi menunjukkan bahwa struktur tabel telah terbentuk, sedangkan kesesuaian tipe data secara spesifik tetap mengacu pada definisi source pada bahan praktikum.
+
 
 ---
 
@@ -531,20 +480,16 @@ FROM src.mahasiswa;
 
 **Hasil eksekusi:**
 
-| raw_rows | distinct_nim | excess_duplicate_rows |
-|---:|---:|---:|
-|  |  |  |
+<img width="527" height="302" alt="image" src="https://github.com/user-attachments/assets/bb65619b-2be5-414d-bda1-ba25da34a202" />
+
 
 **Analisis:**
 
-- Apakah jumlah seluruh baris sama dengan jumlah NIM unik? ........................................
-- Apakah terdapat indikasi NIM duplikat? ................................................................
-- Apakah hasil ini sudah cukup untuk memutuskan penghapusan record? Jelaskan. ........................
+- Apakah jumlah seluruh baris sama dengan jumlah NIM unik? Tidak (1.965 vs 1.950)
+- Apakah terdapat indikasi NIM duplikat? Ya, terdapat 15 baris berlebih.
+- Apakah hasil ini sudah cukup untuk memutuskan penghapusan record? Belum. Hasil hanya menunjukkan selisih jumlah; belum diketahui apakah baris-baris itu identik penuh atau memuat data historis.
 
-**Interpretasi:**
-
-................................................................................
-................................................................................
+**Interpretasi:** Belum. Hasil hanya menunjukkan selisih jumlah; belum diketahui apakah baris-baris itu identik penuh atau memuat data historis.
 
 **Catatan:** Indikasi duplikasi belum membuktikan bahwa record harus dihapus. Perlu pemeriksaan lanjutan untuk mengetahui apakah record merupakan duplikasi atau data historis.
 
@@ -565,14 +510,11 @@ FROM src.mahasiswa;
 
 **Hasil eksekusi:**
 
-| angkatan_min | angkatan_max |
-|---:|---:|
-|  |  |
+<img width="484" height="260" alt="image" src="https://github.com/user-attachments/assets/ab9270d5-9cac-4ee7-9509-5b57cf41df33" />
 
-**Interpretasi:** Jelaskan rentang angkatan mahasiswa yang tercakup dalam dataset.
 
-................................................................................
-................................................................................
+**Interpretasi:** Berdasarkan hasil query untuk mengetahui rentang angkatan mahasiswa, diperoleh nilai angkatan minimum sebesar 2021 dan angkatan maksimum sebesar 2024. Hal ini menunjukkan bahwa dataset mahasiswa mencakup mahasiswa dari angkatan 2021 hingga 2024, dengan rentang tahun angkatan selama 4 tahun. Dengan demikian, data yang terdapat dalam dataset mencakup mahasiswa dari angkatan paling awal tahun 2021 hingga angkatan paling baru tahun 2024.
+
 
 ---
 
@@ -590,14 +532,10 @@ WHERE TRIM(COALESCE(kota_asal_raw, '')) = '';
 
 **Hasil eksekusi:**
 
-| missing_kota |
-|---:|
-|  |
+<img width="465" height="233" alt="image" src="https://github.com/user-attachments/assets/665e4fad-7ce6-43de-8831-0a3a03d4af91" />
 
-**Interpretasi:** Sebutkan jumlah data kota asal yang kosong dan jelaskan dampaknya terhadap analisis persebaran daerah asal mahasiswa.
 
-................................................................................
-................................................................................
+**Interpretasi:** Berdasarkan hasil query pemeriksaan data kota asal mahasiswa, ditemukan sebanyak 30 data yang memiliki nilai kota asal kosong atau tidak terisi. Data kosong tersebut dapat memengaruhi analisis persebaran daerah asal mahasiswa karena informasi mengenai asal daerah tidak tersedia untuk sejumlah mahasiswa. Akibatnya, hasil analisis persebaran daerah asal menjadi kurang lengkap dan jumlah mahasiswa dari setiap daerah yang teridentifikasi mungkin tidak mencerminkan keseluruhan dataset. Oleh karena itu, data kota asal yang kosong perlu diperhatikan agar analisis persebaran daerah asal mahasiswa dapat dilakukan secara lebih akurat.
 
 ---
 
@@ -614,14 +552,10 @@ FROM src.mahasiswa;
 
 **Hasil eksekusi:**
 
-| distinct_prodi_raw |
-|---:|
-|  |
+<img width="606" height="211" alt="image" src="https://github.com/user-attachments/assets/bba59037-392b-4316-bd96-29e89c47fc4f" />
 
-**Interpretasi:** Jelaskan apa yang ditunjukkan oleh jumlah variasi label tersebut. Apakah jumlah variasi sama dengan jumlah program studi resmi?
 
-................................................................................
-................................................................................
+**Interpretasi:** Hasil menunjukkan terdapat 30 variasi label program studi pada data mahasiswa. Jumlah ini belum tentu sama dengan jumlah program studi resmi karena terdapat kemungkinan perbedaan penulisan atau variasi label untuk program studi yang sama.
 
 ---
 
@@ -638,21 +572,19 @@ FROM src.program_studi;
 
 **Hasil eksekusi:**
 
-| canonical_programs |
-|---:|
-|  |
+<img width="604" height="210" alt="image" src="https://github.com/user-attachments/assets/4654560d-5f5d-4ca2-9034-53982ed4e2e1" />
+
 
 **Perbandingan:**
 
 | Keterangan | Jumlah |
 |---|---:|
-| Variasi label `prodi_raw` |  |
-| Record pada `src.program_studi` |  |
+| Variasi label `prodi_raw` | 30 |
+| Record pada `src.program_studi` | 6 |
 
-**Interpretasi:** Jelaskan apakah terdapat indikasi variasi representasi nama program studi pada data mahasiswa dibandingkan dengan tabel referensi.
+**Interpretasi:** Tabel referensi src.program_studi berisi 6 record program studi yang digunakan sebagai acuan nama program studi resmi. Jika dibandingkan dengan 30 variasi label pada kolom prodi_raw, terdapat selisih 24 label. Selisih ini menunjukkan bahwa data mahasiswa memuat beberapa bentuk penulisan selain label resmi, sehingga diperlukan pemetaan label ke program studi yang sesuai pada tahap berikutnya.
 
-................................................................................
-................................................................................
+
 
 ---
 
@@ -673,20 +605,13 @@ ORDER BY prodi_raw;
 
 **Hasil eksekusi:**
 
-| prodi_raw | jumlah |
-|---|---:|
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
+<img width="648" height="558" alt="image" src="https://github.com/user-attachments/assets/2256f7c4-4a83-4cc5-a0cd-df5c1789f586" />
 
-*Tambahkan baris sesuai jumlah hasil query.*
+<img width="595" height="370" alt="image" src="https://github.com/user-attachments/assets/bb1e67d1-5249-4788-9ebb-59694d28dd19" />
 
-**Interpretasi:** Identifikasi label yang memiliki frekuensi terbesar dan catat variasi penulisan yang perlu diperiksa lebih lanjut.
 
-................................................................................
-................................................................................
+
+**Interpretasi:** Distribusi menunjukkan bahwa label Teknologi Informasi memiliki jumlah terbanyak, yaitu 286 record. Selain enam label yang sama dengan nama program studi pada tabel referensi, terdapat 24 label lain dengan total 435 record atau sekitar 22,1% dari seluruh data mahasiswa. Variasi tersebut terlihat dalam bentuk singkatan, pemendekan nama, dan perbedaan kapitalisasi. Oleh karena itu, label-label tersebut perlu diperiksa dan dipetakan terlebih dahulu sebelum dilakukan standardisasi agar setiap mahasiswa terhubung dengan program studi yang tepat.
 
 ---
 
@@ -707,21 +632,9 @@ ORDER BY jk_raw;
 
 **Hasil eksekusi:**
 
-| jk_raw | jumlah |
-|---|---:|
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
+<img width="501" height="349" alt="image" src="https://github.com/user-attachments/assets/35afccb4-6cf2-4e56-880b-1af96ee2a137" />
 
-*Tambahkan baris sesuai jumlah hasil query.*
-
-**Interpretasi:** Jelaskan variasi label jenis kelamin yang ditemukan dan apakah diperlukan standardisasi pada tahap berikutnya.
-
-................................................................................
-................................................................................
+**Interpretasi:** Hasil pengelompokan menunjukkan terdapat enam label pada kolom jk_raw, yaitu F, L, Laki-laki, M, P, dan Perempuan. Keenam label tersebut merepresentasikan dua kategori, yaitu laki-laki dan perempuan, tetapi ditulis dengan bentuk yang berbeda. Jika data langsung dihitung berdasarkan label mentah, jumlah setiap kategori dapat terpisah ke beberapa kelompok. Karena itu, standardisasi label diperlukan pada tahap transformasi berikutnya, bukan pada source raw.
 
 ---
 
@@ -739,12 +652,15 @@ LIMIT 5;
 
 **Hasil eksekusi:**
 
-[Tempelkan tabel hasil query atau tangkapan layar yang memperlihatkan lima record dan nama kolomnya.]
+<img width="554" height="298" alt="image" src="https://github.com/user-attachments/assets/b4a85f3a-4e88-453b-a7b5-e6da166f48c5" />
 
-**Interpretasi:** Jelaskan informasi yang dapat dipahami dari sampel tersebut. Mengapa lima record ini belum cukup untuk menyimpulkan kualitas seluruh dataset?
+<img width="568" height="292" alt="image" src="https://github.com/user-attachments/assets/b6614cb1-65d1-45bc-bdc2-d517bc1f0bc1" />
 
-................................................................................
-................................................................................
+<img width="594" height="302" alt="image" src="https://github.com/user-attachments/assets/07473911-3e18-4259-9d5b-b4fd3ebc321e" />
+
+Lima baris pertama berdasarkan urutan baris pada file sumber (tanpa ORDER BY).
+
+**Interpretasi:** Lima record yang ditampilkan memberikan gambaran awal mengenai isi dan format kolom pada tabel mahasiswa. Contohnya, NIM memiliki pola gabungan tahun, kode program studi, dan nomor urut; kolom jenis kelamin menggunakan beberapa variasi label; sedangkan tanggal lahir ditulis dengan format yang berbeda. Meskipun demikian, sampel lima baris belum mewakili keseluruhan 1.965 record. Oleh karena itu, kesimpulan mengenai kualitas data harus didasarkan pada pemeriksaan seluruh record, seperti perhitungan duplikasi, nilai kosong, dan variasi label yang telah dilakukan pada bagian sebelumnya.
 
 ---
 
@@ -770,27 +686,14 @@ ORDER BY rows DESC;
 
 **Hasil eksekusi:**
 
-| source | rows |
-|---|---:|
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
+<img width="568" height="440" alt="image" src="https://github.com/user-attachments/assets/241c2386-0854-4be7-b027-abd7b85b16e2" />
 
-**Source dengan jumlah baris terbanyak:** ........................................................
 
-**Jumlah baris:** ........................................................
+**Source dengan jumlah baris terbanyak:** aktivitas_lms
 
-**Interpretasi:** Jelaskan tabel yang memiliki ukuran terbesar dan mengapa informasi ukuran source berguna dalam perencanaan pengolahan data.
+**Jumlah baris:** 200.356
 
-................................................................................
-................................................................................
+**Interpretasi:** Berdasarkan hasil pengurutan jumlah baris, tabel aktivitas_lms merupakan source dengan ukuran terbesar, yaitu 200.356 baris. Jumlah tersebut jauh lebih besar dibandingkan tabel source lainnya karena tabel ini mencatat aktivitas mahasiswa pada Learning Management System (LMS). Ukuran data tersebut perlu diperhatikan dalam perencanaan proses pengolahan berikutnya, terutama untuk menentukan strategi pemrosesan dan kebutuhan optimasi.
 
 ---
 
@@ -816,13 +719,8 @@ SELECT 'kelulusan', COUNT(DISTINCT nim) FROM src.kelulusan;
 
 **Hasil eksekusi:**
 
-| source | distinct_nim |
-|---|---:|
-| `krs` |  |
-| `nilai` |  |
-| `aktivitas_lms` |  |
-| `pembayaran` |  |
-| `kelulusan` |  |
+<img width="565" height="346" alt="image" src="https://github.com/user-attachments/assets/5075874f-b323-4981-a6c7-2599ef78a338" />
+
 
 ### 18.1 Catatan relasi awal
 
@@ -830,16 +728,13 @@ Berdasarkan kesamaan kolom `nim` dan konteks bisnis, lengkapi kandidat relasi be
 
 | Rel ID | Source A | Key A | Source B | Key B | Dugaan hubungan bisnis | Catatan/verifikasi lanjutan |
 |---|---|---|---|---|---|---|
-| REL01 | `mahasiswa` | `nim` | `krs` | `nim` | 1 mahasiswa : banyak KRS |  |
-| REL02 | `mahasiswa` | `nim` | `nilai` | `nim` | 1 mahasiswa : banyak nilai |  |
-| REL03 | `mahasiswa` | `nim` | `aktivitas_lms` | `nim` | 1 mahasiswa : banyak aktivitas LMS |  |
-| REL04 | `mahasiswa` | `nim` | `pembayaran` | `nim` | 1 mahasiswa : banyak pembayaran |  |
-| REL05 | `mahasiswa` | `nim` | `kelulusan` | `nim` | 1 mahasiswa : 0/1 outcome kelulusan secara bisnis |  |
+| REL01 | `mahasiswa` | `nim` | `krs` | `nim` | 1 mahasiswa : banyak KRS | Uji orphan NIM KRS terhadap mahasiswa |
+| REL02 | `mahasiswa` | `nim` | `nilai` | `nim` | 1 mahasiswa : banyak nilai | Uji orphan NIM nilai; cocokkan dengan KRS |
+| REL03 | `mahasiswa` | `nim` | `aktivitas_lms` | `nim` | 1 mahasiswa : banyak aktivitas LMS | Uji orphan NIM LMS |
+| REL04 | `mahasiswa` | `nim` | `pembayaran` | `nim` | 1 mahasiswa : banyak pembayaran | Uji orphan NIM pembayaran |
+| REL05 | `mahasiswa` | `nim` | `kelulusan` | `nim` | 1 mahasiswa : 0/1 outcome kelulusan secara bisnis | Uji duplikasi kelulusan dan orphan NIM |
 
-**Interpretasi:** Jelaskan indikasi relasi yang dapat dikenali dari struktur dan hasil query. Tegaskan hal-hal yang masih perlu diverifikasi sebelum menyatakan integritas referensial telah terpenuhi.
-
-................................................................................
-................................................................................
+**Interpretasi:** Kolom nim terdapat pada tabel mahasiswa serta tabel krs, nilai, aktivitas_lms, pembayaran, dan kelulusan. Hal ini menunjukkan adanya dugaan hubungan antara data mahasiswa dan data transaksi atau aktivitas. Jumlah NIM unik pada krs, nilai, aktivitas_lms, dan pembayaran masing-masing 1.950, sama dengan jumlah NIM unik pada tabel mahasiswa, sedangkan tabel kelulusan memiliki 345 NIM unik. Perbedaan tersebut dapat terjadi karena tidak semua mahasiswa memiliki catatan kelulusan. Namun, kesamaan nama kolom dan jumlah NIM unik belum membuktikan bahwa seluruh NIM pada tabel terkait benar-benar cocok. Integritas relasi masih perlu diperiksa melalui pengujian orphan menggunakan LEFT JOIN pada Unit 1.2.
 
 ---
 
@@ -849,18 +744,18 @@ Lengkapi tabel berikut berdasarkan hasil seluruh aktivitas Unit 1.1.
 
 | No. | Aspek yang diperiksa | Temuan berdasarkan hasil query | Tindak lanjut yang disarankan |
 |---:|---|---|---|
-| 1 | Kesiapan environment PostgreSQL |  |  |
-| 2 | Ketersediaan schema dan tabel |  |  |
-| 3 | Keberhasilan impor dataset |  |  |
-| 4 | Jumlah baris setiap source |  |  |
-| 5 | Jumlah kolom setiap source |  |  |
-| 6 | Keunikan NIM mahasiswa |  |  |
-| 7 | Rentang angkatan |  |  |
-| 8 | Kelengkapan kota asal |  |  |
-| 9 | Variasi label program studi |  |  |
-| 10 | Variasi label jenis kelamin |  |  |
-| 11 | Ukuran source terbesar |  |  |
-| 12 | Indikasi relasi antartabel |  |  |
+| 1 | Kesiapan environment PostgreSQL | Server dan database dapat diakses; versi dan user tercatat | Pertahankan konfigurasi untuk unit berikutnya |
+| 2 | Ketersediaan schema dan tabel | Schema src dan 10 tabel tersedia | Tidak ada |
+| 3 | Keberhasilan impor dataset | 10 file CSV termuat; jumlah baris sesuai acuan | Pertahankan raw data tanpa perubahan |
+| 4 | Jumlah baris setiap source | 6 s.d. 200.356 baris; sesuai acuan | Tidak ada |
+| 5 | Jumlah kolom setiap source | 5 s.d. 11 kolom | Tidak ada |
+| 6 | Keunikan NIM mahasiswa | 1.965 baris vs 1.950 NIM unik; 15 baris berlebih | Selidiki apakah duplikat persis atau historis |
+| 7 | Rentang angkatan | 2021 s.d. 2024 | Tidak ada |
+| 8 | Kelengkapan kota asal | 30 record kosong (1,53%) | Tentukan penanganan pada ETL |
+| 9 | Variasi label program studi | 30 label vs 6 program studi resmi | Susun tabel mapping label ke kode prodi |
+| 10 | Variasi label jenis kelamin | 6 label untuk 2 konsep | Standardisasi ke L/P pada tahap transformasi |
+| 11 | Ukuran source terbesar | aktivitas_lms (200.356 baris) | Rencanakan pemrosesan bertahap |
+| 12 | Indikasi relasi antartabel | nim muncul di 5 tabel transaksi | Uji integritas referensial pada Unit 1.2 |
 
 ---
 
@@ -877,30 +772,10 @@ Tuliskan kesimpulan berdasarkan hasil praktikum Unit 1.1. Kesimpulan sekurang-ku
 
 **Kesimpulan:**
 
-................................................................................
-................................................................................
-................................................................................
-................................................................................
-................................................................................
+Source layer pada schema src telah siap: schema dan sepuluh tabel berhasil dibuat serta seluruh file CSV UADW v1.0 berhasil dimuat tanpa mengubah nilai raw. Jumlah baris setiap tabel sesuai dengan nilai acuan (dari 6 baris pada program_studi hingga 200.356 baris pada aktivitas_lms) dan jumlah kolom sesuai definisi source.
+
+Initial profiling pada tabel mahasiswa menunjukkan beberapa karakteristik awal: NIM belum terbukti unik (1.965 baris vs 1.950 NIM unik), angkatan mencakup 2021–2024, 30 record tidak memiliki kota asal, terdapat 30 variasi label program studi untuk 6 program studi resmi, dan 6 variasi label untuk 2 konsep jenis kelamin. Kolom nim juga muncul pada lima tabel transaksi sehingga terindikasi relasi dengan mahasiswa.
+
+Temuan tersebut hanya dicatat dan tidak diperbaiki pada unit ini. Unit berikutnya perlu memeriksa lebih dalam duplikasi (apakah identik penuh atau historis), kelengkapan, validitas, konsistensi format, dan integritas referensial antartabel sebelum dilakukan cleaning dan standardisasi.
 
 ---
-
-## Lampiran Bukti Praktikum
-
-Lampirkan bukti yang relevan dan terbaca, antara lain:
-
-- [ ] Koneksi PostgreSQL dan informasi versi.
-- [ ] Schema `src` dan daftar sepuluh tabel.
-- [ ] Proses impor sepuluh file CSV.
-- [ ] Hasil query verifikasi row count dan column count.
-- [ ] Hasil query initial profiling mahasiswa.
-- [ ] Hasil query ukuran source dan relasi awal.
-- [ ] Bukti tambahan apabila terdapat kendala atau perbedaan hasil.
-
-## Pernyataan Integritas Data
-
-Saya menyatakan bahwa pada pelaksanaan Unit 1.1, pemeriksaan dilakukan terhadap raw source untuk keperluan persiapan dan *initial profiling*. Saya tidak melakukan cleaning, standardisasi, deduplikasi, `UPDATE`, atau `DELETE` terhadap isi raw source.
-
-| Nama Mahasiswa | Tanggal | Tanda Tangan |
-|---|---|---|
-|  |  |  |
