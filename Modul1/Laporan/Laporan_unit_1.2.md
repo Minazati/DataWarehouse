@@ -9,8 +9,8 @@
 
 | Identitas | Keterangan |
 |---|---|
-| Nama | Annisa Almaghvirah |
-| NIM | 240306037 |
+| Nama | Minazati Ifada |
+| NIM | 240306035 |
 | Modul | 1 |
 | Unit | 1.2 |
 | Tanggal Praktikum | 5 November 2026 |
@@ -50,7 +50,8 @@ SELECT version();
 **Hasil eksekusi:**
 
 
-![Gambar 27. Hasil SELECT version()](gambar/unit-1.2_01.png)
+<img width="542" height="219" alt="image" src="https://github.com/user-attachments/assets/8cbeda02-500d-4574-8799-f344c6135f4c" />
+
 
 
 ### 1.2 Memeriksa database dan user aktif
@@ -64,7 +65,8 @@ SELECT
 **Hasil eksekusi:**
 
 
-![Gambar 28. Hasil database dan user aktif](gambar/unit-1.2_02.png)
+<img width="396" height="215" alt="image" src="https://github.com/user-attachments/assets/4be00af5-10fe-4087-87fa-dd69ec8afa60" />
+
 
 
 ### 1.3 Memastikan schema `src` tersedia
@@ -78,7 +80,7 @@ WHERE schema_name = 'src';
 **Hasil eksekusi:**
 
 
-![Gambar 29. Hasil pemeriksaan schema src](gambar/unit-1.2_03.png)
+<img width="453" height="214" alt="image" src="https://github.com/user-attachments/assets/2b80304b-9973-4d75-8d9a-1363619d905c" />
 
 
 ---
@@ -107,7 +109,8 @@ UNION ALL SELECT 'kelulusan', COUNT(*) FROM src.kelulusan;
 
 **Hasil eksekusi**
 
-![Gambar 30. Soal 1 – Jumlah record setiap tabel](gambar/unit-1.2_04.png)
+<img width="510" height="390" alt="image" src="https://github.com/user-attachments/assets/46e77f91-3dce-4058-a401-73ab5e55dd5b" />
+
 
 
 **Interpretasi**
@@ -131,7 +134,7 @@ ORDER BY table_name ASC;
 
 **Hasil eksekusi**
 
-![Gambar 31. Soal 2 – Jumlah kolom setiap tabel](gambar/unit-1.2_05.png)
+<img width="505" height="395" alt="image" src="https://github.com/user-attachments/assets/feb51b07-c572-43b3-ba60-9af39fa98d9a" />
 
 
 **Interpretasi**
@@ -159,7 +162,8 @@ FROM src.mahasiswa;
 
 **Hasil eksekusi**
 
-![Gambar 32. Soal 3 – Keunikan NIM mahasiswa](gambar/unit-1.2_06.png)
+<img width="618" height="273" alt="image" src="https://github.com/user-attachments/assets/ba5227af-8004-4d89-a5e9-5b630f34be32" />
+
 
 
 **Interpretasi**
@@ -183,9 +187,7 @@ ORDER BY jumlah_kemunculan DESC, nim ASC;
 
 **Hasil eksekusi**
 
-![Gambar 33. Soal 4 – NIM duplikat (bagian 1 dari 2)](gambar/unit-1.2_07.png)
-
-![Gambar 34. Soal 4 – NIM duplikat (bagian 2 dari 2)](gambar/unit-1.2_08.png)
+<img width="447" height="451" alt="image" src="https://github.com/user-attachments/assets/fe984de3-b39b-425c-bb52-bf3d2f6c7d13" />
 
 
 Hasil query menampilkan **15 baris** (15 NIM), masing-masing muncul 2 kali.
@@ -213,7 +215,8 @@ WHERE kota_asal_raw IS NULL
 
 **Hasil eksekusi**
 
-![Gambar 35. Soal 5 – Kelengkapan kota asal](gambar/unit-1.2_09.png)
+<img width="558" height="236" alt="image" src="https://github.com/user-attachments/assets/c3956a50-0a63-4e78-82ce-f45745bb2cfa" />
+
 
 
 **Interpretasi**
@@ -236,11 +239,9 @@ ORDER BY jumlah_mahasiswa DESC, prodi_raw;
 
 **Hasil eksekusi**
 
-![Gambar 36. Soal 6 – Distribusi prodi_raw (bagian 1 dari 3)](gambar/unit-1.2_10.png)
+<img width="657" height="477" alt="image" src="https://github.com/user-attachments/assets/227388db-1a56-4a93-a966-f3d21b76dc4a" />
 
-![Gambar 37. Soal 6 – Distribusi prodi_raw (bagian 2 dari 3)](gambar/unit-1.2_11.png)
-
-![Gambar 38. Soal 6 – Distribusi prodi_raw (bagian 3 dari 3)](gambar/unit-1.2_12.png)
+<img width="691" height="549" alt="image" src="https://github.com/user-attachments/assets/e8e6af11-e1c9-48d0-b22d-41e03d64c805" />
 
 
 **Interpretasi**
@@ -263,7 +264,7 @@ WHERE prodi_raw IS NOT NULL
 
 **Hasil eksekusi**
 
-![Gambar 39. Soal 7 – Variasi penulisan program studi](gambar/unit-1.2_13.png)
+<img width="484" height="206" alt="image" src="https://github.com/user-attachments/assets/09fe045e-b30d-4840-8b1c-638538840a3f" />
 
 
 **Interpretasi**
@@ -286,7 +287,7 @@ ORDER BY jumlah_mahasiswa DESC, jk_raw;
 
 **Hasil eksekusi**
 
-![Gambar 40. Soal 8 – Distribusi jk_raw](gambar/unit-1.2_14.png)
+<img width="482" height="313" alt="image" src="https://github.com/user-attachments/assets/dba1ed8d-940e-4862-b2fc-7097b84e05a3" />
 
 
 **Interpretasi**
@@ -309,7 +310,8 @@ ORDER BY jumlah_record DESC, status_raw;
 
 **Hasil eksekusi**
 
-![Gambar 39. Soal 9 – Distribusi status_raw](gambar/unit-1.2_15.png)
+<img width="488" height="313" alt="image" src="https://github.com/user-attachments/assets/aa3378e4-191c-4a4d-a80a-163242255705" />
+
 
 
 **Interpretasi**
@@ -332,11 +334,7 @@ ORDER BY jumlah_mahasiswa DESC, kode_prodi_raw;
 
 **Hasil eksekusi**
 
-![Gambar 40. Soal 10 – Distribusi kode_prodi_raw (bagian 1 dari 3)](gambar/unit-1.2_16.png)
-
-![Gambar 41. Soal 10 – Distribusi kode_prodi_raw (bagian 2 dari 3)](gambar/unit-1.2_17.png)
-
-![Gambar 42. Soal 10 – Distribusi kode_prodi_raw (bagian 3 dari 3)](gambar/unit-1.2_18.png)
+<img width="466" height="532" alt="image" src="https://github.com/user-attachments/assets/b9f4b6ee-cc83-41ca-884a-95a363bbe29a" />
 
 
 Nilai yang ditulis dengan tanda kutip memiliki spasi di depan/belakang.
@@ -365,7 +363,7 @@ WHERE m.prodi_raw IS NOT NULL
 
 **Hasil eksekusi**
 
-![Gambar 43. Soal 11 – Nama program studi tidak sesuai standar](gambar/unit-1.2_19.png)
+<img width="522" height="300" alt="image" src="https://github.com/user-attachments/assets/d8891ddd-aa0c-4e45-8a0f-07ae2d6c7540" />
 
 
 **Interpretasi**
@@ -401,7 +399,7 @@ ORDER BY jumlah_record DESC;
 
 **Hasil eksekusi**
 
-![Gambar 44. Soal 12 – Variasi format tanggal masuk](gambar/unit-1.2_20.png)
+<img width="609" height="474" alt="image" src="https://github.com/user-attachments/assets/988b74c0-8d7f-4038-9ca0-2fe02cb7fe71" />
 
 
 **Interpretasi**
@@ -428,7 +426,8 @@ FROM src.krs;
 
 **Hasil eksekusi**
 
-![Gambar 45. Soal 13 – Record KRS vs krs_id unik](gambar/unit-1.2_21.png)
+<img width="486" height="232" alt="image" src="https://github.com/user-attachments/assets/539532a1-2353-42ec-b822-e1e359213866" />
+
 
 **Interpretasi**
 
@@ -452,11 +451,9 @@ ORDER BY jumlah_kemunculan DESC, nim, kode_mk, semester_id;
 
 **Hasil eksekusi**
 
-![Gambar 46. Soal 14 – Duplikasi pengambilan mata kuliah (bagian 1 dari 3)](gambar/unit-1.2_22.png)
+<img width="683" height="480" alt="image" src="https://github.com/user-attachments/assets/10862605-3ca2-4f3a-b78e-4ad207f1eb66" />
 
-![Gambar 47. Soal 14 – Duplikasi pengambilan mata kuliah (bagian 2 dari 3)](gambar/unit-1.2_23.png)
-
-![Gambar 48. Soal 14 – Duplikasi pengambilan mata kuliah (bagian 3 dari 3)](gambar/unit-1.2_24.png)
+<img width="570" height="483" alt="image" src="https://github.com/user-attachments/assets/3ed3b6e1-eae4-4464-a918-d1764846da09" />
 
 
 Hasil query menampilkan **25 kombinasi** `nim + kode_mk + semester_id`, masing-masing dengan `jumlah` = 2.
@@ -485,7 +482,8 @@ FROM (
 
 **Hasil eksekusi**
 
-![Gambar 49. Soal 15 – Kelebihan record KRS akibat duplikasi](gambar/unit-1.2_25.png)
+<img width="566" height="267" alt="image" src="https://github.com/user-attachments/assets/13ab9e9d-8a23-4727-9bf6-e96e2b96084f" />
+
 
 
 **Interpretasi**
@@ -511,7 +509,7 @@ WHERE nilai_angka IS NULL;
 
 **Hasil eksekusi**
 
-![Gambar 50. Soal 16 – Nilai angka kosong](gambar/unit-1.2_26.png)
+<img width="410" height="228" alt="image" src="https://github.com/user-attachments/assets/4a456a88-ccf2-4709-8cb6-e9b3af43fd88" />
 
 
 **Interpretasi**
@@ -534,7 +532,8 @@ WHERE nilai_angka IS NOT NULL
 
 **Hasil eksekusi**
 
-![Gambar 51. Soal 17 – Nilai angka di luar rentang 0–100](gambar/unit-1.2_27.png)
+<img width="461" height="221" alt="image" src="https://github.com/user-attachments/assets/00fe97ef-b4f7-4645-ace5-704e45d2840f" />
+
 
 
 **Interpretasi**
@@ -561,9 +560,9 @@ WHERE nilai_angka BETWEEN 0 AND 100;
 
 **Hasil eksekusi**
 
-![Gambar 52. Soal 18 – Statistik deskriptif nilai valid (bagian 1 dari 2)](gambar/unit-1.2_28.png)
+<img width="509" height="273" alt="image" src="https://github.com/user-attachments/assets/8fc4d21a-fbb6-4607-99bd-7df142b83ea0" />
 
-![Gambar 53. Soal 18 – Statistik deskriptif nilai valid (bagian 2 dari 2)](gambar/unit-1.2_29.png)
+<img width="161" height="88" alt="image" src="https://github.com/user-attachments/assets/38834dde-1cc0-4f4c-ac3a-c3f8628e0235" />
 
 
 Jumlah valid = 57.000 − 20 (kosong) − 12 (di luar rentang 0–100) = 56.968. Sebagai pembanding, tanpa filter rentang nilai berkisar −18 sampai 106 (rata-rata 77,39) sehingga outlier memperlebar rentang.
@@ -602,7 +601,7 @@ WHERE angka BETWEEN 0 AND 100
 
 **Hasil eksekusi**
 
-![Gambar 54. Soal 19 – Konsistensi nilai angka dan nilai huruf](gambar/unit-1.2_30.png)
+<img width="609" height="345" alt="image" src="https://github.com/user-attachments/assets/7724aa7d-698f-4845-afe0-eaa1d32cdcc4" />
 
 
 **Interpretasi**
@@ -632,7 +631,8 @@ WHERE angka BETWEEN 0 AND 100
 
 **Hasil eksekusi**
 
-![Gambar 55. Soal 20 – Konsistensi nilai angka dan status kelulusan](gambar/unit-1.2_31.png)
+<img width="579" height="315" alt="image" src="https://github.com/user-attachments/assets/782b0829-262a-4332-bfb2-c1d5b90b49df" />
+
 
 
 Sebagai pembanding, pemeriksaan **nilai_huruf vs status_lulus** pada profiling awal menemukan 17 record tidak konsisten. Pemeriksaan tersebut berbasis huruf sehingga berbeda dengan soal ini yang berbasis nilai angka.
@@ -658,7 +658,7 @@ ORDER BY jumlah_kemunculan DESC, nim, kode_mk, semester_id;
 
 **Hasil eksekusi**
 
-![Gambar 56. Soal 21 – Duplikasi record nilai](gambar/unit-1.2_32.png)
+<img width="605" height="268" alt="image" src="https://github.com/user-attachments/assets/dda5ced1-096e-4bdd-837e-9444fdf407d4" />
 
 
 Query menghasilkan **0 baris** (tidak ada kombinasi yang muncul lebih dari satu kali).
@@ -687,7 +687,7 @@ WHERE m.nim IS NULL;
 
 **Hasil eksekusi**
 
-![Gambar 57. Soal 22 – NIM KRS tidak terdaftar](gambar/unit-1.2_33.png)
+<img width="467" height="259" alt="image" src="https://github.com/user-attachments/assets/7b5042f5-de22-4834-99e1-2b832178d936" />
 
 
 **Interpretasi**
@@ -711,7 +711,8 @@ WHERE m.nim IS NULL;
 
 **Hasil eksekusi**
 
-![Gambar 58. Soal 23 – NIM nilai tidak terdaftar](gambar/unit-1.2_34.png)
+<img width="497" height="233" alt="image" src="https://github.com/user-attachments/assets/8c036ea3-ed28-453b-b05d-43ee5742330f" />
+
 
 
 **Interpretasi**
@@ -734,7 +735,8 @@ WHERE mk.kode_mk IS NULL;
 
 **Hasil eksekusi**
 
-![Gambar 59. Soal 24 – Kode MK nilai tidak terdaftar](gambar/unit-1.2_35.png)
+<img width="502" height="223" alt="image" src="https://github.com/user-attachments/assets/694c6abc-8c76-4b91-8b7c-e12a02707d12" />
+
 
 
 **Interpretasi**
@@ -757,7 +759,8 @@ WHERE s.semester_id IS NULL;
 
 **Hasil eksekusi**
 
-![Gambar 60. Soal 25 – Semester nilai tidak terdaftar](gambar/unit-1.2_36.png)
+<img width="498" height="214" alt="image" src="https://github.com/user-attachments/assets/2315d59f-3d90-4a24-b8ac-41c88decc189" />
+
 
 
 **Interpretasi**
@@ -785,7 +788,8 @@ FROM src.aktivitas_lms;
 
 **Hasil eksekusi**
 
-![Gambar 61. Soal 26 – Duplikasi aktivitas LMS](gambar/unit-1.2_37.png)
+<img width="533" height="247" alt="image" src="https://github.com/user-attachments/assets/236a8389-1299-4a6c-99b4-a93923c5e0e1" />
+
 
 
 **Interpretasi**
@@ -810,7 +814,7 @@ ORDER BY jumlah DESC, tipe_event;
 
 **Hasil eksekusi**
 
-![Gambar 62. Soal 27 – Distribusi tipe aktivitas LMS](gambar/unit-1.2_38.png)
+<img width="429" height="343" alt="image" src="https://github.com/user-attachments/assets/e93a8ab0-e4f1-4614-973c-987de5c34841" />
 
 
 **Interpretasi**
@@ -834,7 +838,8 @@ WHERE tipe_event = 'quiz_attempt'
 
 **Hasil eksekusi**
 
-![Gambar 63. Soal 28 – Skor kuis kosong pada quiz_attempt](gambar/unit-1.2_39.png)
+<img width="488" height="233" alt="image" src="https://github.com/user-attachments/assets/3a3ed644-1e18-4c98-955e-39676ca3040c" />
+
 
 
 **Interpretasi**
@@ -859,7 +864,8 @@ WHERE tipe_event <> 'quiz_attempt'
 
 **Hasil eksekusi**
 
-![Gambar 64. Soal 29 – Skor pada aktivitas selain kuis](gambar/unit-1.2_40.png)
+<img width="482" height="234" alt="image" src="https://github.com/user-attachments/assets/3d22e348-f0db-42ec-aa99-bf4b2501d322" />
+
 
 
 **Interpretasi**
@@ -885,7 +891,8 @@ WHERE nominal_bayar < 0;
 
 **Hasil eksekusi**
 
-![Gambar 65. Soal 30 – Nominal pembayaran negatif](gambar/unit-1.2_41.png)
+<img width="426" height="227" alt="image" src="https://github.com/user-attachments/assets/552b19fe-4cce-4e92-bd9a-f959659a2e14" />
+
 
 
 **Interpretasi**
@@ -908,7 +915,7 @@ WHERE nominal_bayar > 0
 
 **Hasil eksekusi**
 
-![Gambar 66. Soal 31 – Pembayaran positif tanpa tanggal bayar](gambar/unit-1.2_42.png)
+<img width="571" height="225" alt="image" src="https://github.com/user-attachments/assets/599da9ea-5273-48c7-872e-8c4c83273de0" />
 
 
 **Interpretasi**
@@ -931,7 +938,8 @@ ORDER BY jumlah DESC, status_pembayaran;
 
 **Hasil eksekusi**
 
-![Gambar 67. Soal 32 – Distribusi status pembayaran](gambar/unit-1.2_43.png)
+<img width="473" height="289" alt="image" src="https://github.com/user-attachments/assets/3c4975d8-cd9c-4ffa-94c1-e4fe43f7e0b5" />
+
 
 
 **Interpretasi**
@@ -960,7 +968,7 @@ FROM src.kelulusan;
 
 **Hasil eksekusi**
 
-![Gambar 68. Soal 33 – Duplikasi data kelulusan](gambar/unit-1.2_44.png)
+<img width="554" height="260" alt="image" src="https://github.com/user-attachments/assets/d04776f1-1703-4389-86a0-130d63021d42" />
 
 
 **Interpretasi**
@@ -983,7 +991,7 @@ ORDER BY jumlah_mahasiswa DESC, status_tepat_waktu;
 
 **Hasil eksekusi**
 
-![Gambar 69. Soal 34 – Status kelulusan tepat waktu](gambar/unit-1.2_45.png)
+<img width="518" height="256" alt="image" src="https://github.com/user-attachments/assets/d1c85b10-5057-42c0-a922-74a695134772" />
 
 
 **Interpretasi**
@@ -1010,7 +1018,8 @@ WHERE m.nim IS NULL;
 
 **Hasil eksekusi**
 
-![Gambar 70. Soal 35 – Aktivitas LMS dengan NIM tidak terdaftar](gambar/unit-1.2_46.png)
+<img width="511" height="248" alt="image" src="https://github.com/user-attachments/assets/70e7dec4-ca2b-4660-bd75-e4e33866030b" />
+
 
 
 **Interpretasi**
@@ -1033,7 +1042,8 @@ WHERE mk.kode_mk IS NULL;
 
 **Hasil eksekusi**
 
-![Gambar 71. Soal 36 – Aktivitas LMS dengan kode MK tidak terdaftar](gambar/unit-1.2_47.png)
+<img width="537" height="245" alt="image" src="https://github.com/user-attachments/assets/2302f2ce-3a04-49e8-802d-97b9dea2026d" />
+
 
 
 **Interpretasi**
@@ -1056,7 +1066,8 @@ WHERE m.nim IS NULL;
 
 **Hasil eksekusi**
 
-![Gambar 72. Soal 37 – Pembayaran dengan NIM tidak terdaftar](gambar/unit-1.2_48.png)
+<img width="509" height="237" alt="image" src="https://github.com/user-attachments/assets/11553340-96f6-4c0a-983d-cf42e083a963" />
+
 
 
 **Interpretasi**
@@ -1079,7 +1090,8 @@ WHERE m.nim IS NULL;
 
 **Hasil eksekusi**
 
-![Gambar 73. Soal 38 – Kelulusan dengan NIM tidak terdaftar](gambar/unit-1.2_49.png)
+<img width="521" height="223" alt="image" src="https://github.com/user-attachments/assets/ff8724cb-b632-4546-adf2-08dec961e5dd" />
+
 
 
 **Interpretasi**
