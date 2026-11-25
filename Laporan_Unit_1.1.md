@@ -90,16 +90,16 @@ Source layer menggunakan schema `src` untuk menyimpan data mentah (*raw source*)
 
 | No. | Nama tabel | Peran data | Status pembuatan |
 |---:|---|---|---|
-| 1 | `src.program_studi` | Master/reference program studi |  |
-| 2 | `src.semester` | Reference periode akademik |  |
-| 3 | `src.mahasiswa` | Master mahasiswa |  |
-| 4 | `src.dosen` | Master dosen |  |
-| 5 | `src.mata_kuliah` | Master/reference mata kuliah |  |
-| 6 | `src.krs` | Transaksi pengambilan mata kuliah |  |
-| 7 | `src.nilai` | Hasil penilaian akademik |  |
-| 8 | `src.aktivitas_lms` | Aktivitas mahasiswa pada LMS |  |
-| 9 | `src.pembayaran` | Transaksi pembayaran |  |
-| 10 | `src.kelulusan` | Data outcome kelulusan |  |
+| 1 | `src.program_studi` | Master/reference program studi | Berhasil dibuat |
+| 2 | `src.semester` | Reference periode akademik | Berhasil dibuat |
+| 3 | `src.mahasiswa` | Master mahasiswa | Berhasil dibuat |
+| 4 | `src.dosen` | Master dosen | Berhasil dibuat |
+| 5 | `src.mata_kuliah` | Master/reference mata kuliah | Berhasil dibuat |
+| 6 | `src.krs` | Transaksi pengambilan mata kuliah | Berhasil dibuat |
+| 7 | `src.nilai` | Hasil penilaian akademik | Berhasil dibuat |
+| 8 | `src.aktivitas_lms` | Aktivitas mahasiswa pada LMS | Berhasil dibuat |
+| 9 | `src.pembayaran` | Transaksi pembayaran | Berhasil dibuat |
+| 10 | `src.kelulusan` | Data outcome kelulusan | Berhasil dibuat |
 
 ### 2.1 Membuat schema dan tabel
 
