@@ -742,17 +742,6 @@ Lengkapi tabel berikut berdasarkan hasil seluruh aktivitas Unit 1.1.
 
 ## 20. Kesimpulan
 
-Tuliskan kesimpulan berdasarkan hasil praktikum Unit 1.1. Kesimpulan sekurang-kurangnya mencakup:
-
-1. Kesiapan environment dan keberhasilan pembuatan source layer.
-2. Keberhasilan pemuatan sepuluh dataset raw.
-3. Hasil verifikasi jumlah baris dan kolom source.
-4. Karakteristik awal data mahasiswa yang ditemukan, seperti indikasi duplikasi, nilai kosong, dan variasi label.
-5. Gambaran awal relasi antartabel yang perlu diverifikasi lebih lanjut.
-6. Hal-hal yang akan menjadi fokus pemeriksaan pada unit praktikum berikutnya.
-
-**Kesimpulan:**
-
 Source layer pada schema src telah siap: schema dan sepuluh tabel berhasil dibuat serta seluruh file CSV UADW v1.0 berhasil dimuat tanpa mengubah nilai raw. Jumlah baris setiap tabel sesuai dengan nilai acuan (dari 6 baris pada program_studi hingga 200.356 baris pada aktivitas_lms) dan jumlah kolom sesuai definisi source.
 
 Initial profiling pada tabel mahasiswa menunjukkan beberapa karakteristik awal: NIM belum terbukti unik (1.965 baris vs 1.950 NIM unik), angkatan mencakup 2021–2024, 30 record tidak memiliki kota asal, terdapat 30 variasi label program studi untuk 6 program studi resmi, dan 6 variasi label untuk 2 konsep jenis kelamin. Kolom nim juga muncul pada lima tabel transaksi sehingga terindikasi relasi dengan mahasiswa.
