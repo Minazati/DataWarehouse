@@ -11,14 +11,14 @@
 
 | Identitas | Keterangan |
 |---|---|
-| Nama | ........................................................ |
-| NIM | ........................................................ |
-| Program Studi | ........................................................ |
-| Kelas/Kelompok | ........................................................ |
+| Nama | Minazati Ifada |
+| NIM | 240306035 |
+| Program Studi | Teknologi Informasi |
+| Kelas/Kelompok | A/4 |
 | Modul | 1 |
 | Unit | 1.1 |
-| Tanggal Praktikum | ........................................................ |
-| Dosen/Instruktur | ........................................................ |
+| Tanggal Praktikum | 5 November 2026 |
+| Dosen/Instruktur | Adam Bachtiar Maulachela S.Kom., M.MT. |
 
 ## Tujuan Praktikum
 
