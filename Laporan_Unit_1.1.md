@@ -73,11 +73,6 @@ SELECT
 <img width="413" height="253" alt="image" src="https://github.com/user-attachments/assets/371b7d8d-1f2d-4a37-9bcc-b19204fa2efc" />
 
 
-**Interpretasi:**
-
-................................................................................
-................................................................................
-
 ### 1.3 Memeriksa keberadaan schema `src`
 
 Query yang digunakan:
@@ -91,12 +86,6 @@ WHERE schema_name = 'src';
 **Hasil eksekusi:**
 
 <img width="428" height="247" alt="image" src="https://github.com/user-attachments/assets/b88cb8a3-d1e3-4d9a-8887-bf32e45849bc" />
-
-
-**Interpretasi:**
-
-................................................................................
-................................................................................
 
 ---
 
@@ -257,10 +246,7 @@ CREATE TABLE IF NOT EXISTS src.kelulusan (
 
 **Catatan:** Perintah `DROP TABLE` dapat menghapus tabel beserta isinya. Gunakan hanya apabila memang diperlukan dalam persiapan praktikum dan pastikan tidak menghapus data yang masih dibutuhkan.
 
-**Interpretasi:**
-
-................................................................................
-................................................................................
+**Interpretasi:** Schema src dan sepuluh tabel sumber dibuat sebagai wadah data mentah. Kolom dibuat mengikuti header CSV; atribut *_raw dan kategori bertipe teks agar nilai asli (termasuk format tanggal dan label yang beragam) tidak berubah saat dimuat, sedangkan kolom numerik (mis. nilai_angka, nominal_bayar) bertipe numerik.
 
 ---
 
