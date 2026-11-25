@@ -53,11 +53,6 @@ SELECT version();
 <img width="496" height="221" alt="image" src="https://github.com/user-attachments/assets/55a2c0bf-1e1b-411a-bb60-eba2417550a1" />
 ```
 
-**Interpretasi:**
-
-................................................................................
-................................................................................
-
 ### 1.2 Memeriksa database dan user aktif
 
 Query yang digunakan:
