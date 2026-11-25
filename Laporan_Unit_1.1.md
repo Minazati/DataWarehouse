@@ -48,9 +48,10 @@ SELECT version();
 ```
 
 **Hasil eksekusi:**
+<img width="496" height="221" alt="image" src="https://github.com/user-attachments/assets/55a2c0bf-1e1b-411a-bb60-eba2417550a1" />
 
 ```text
-[Tempelkan hasil query di sini]
+
 ```
 
 **Interpretasi:**
@@ -70,9 +71,8 @@ SELECT
 
 **Hasil eksekusi:**
 
-| database_aktif | user_aktif |
-|---|---|
-|  |  |
+<img width="413" height="253" alt="image" src="https://github.com/user-attachments/assets/371b7d8d-1f2d-4a37-9bcc-b19204fa2efc" />
+
 
 **Interpretasi:**
 
@@ -91,11 +91,8 @@ WHERE schema_name = 'src';
 
 **Hasil eksekusi:**
 
-| schema_name |
-|---|
-|  |
+<img width="428" height="247" alt="image" src="https://github.com/user-attachments/assets/b88cb8a3-d1e3-4d9a-8887-bf32e45849bc" />
 
-**Status:** [ ] Schema ditemukan  [ ] Schema belum ditemukan
 
 **Interpretasi:**
 
@@ -128,13 +125,136 @@ Tuliskan atau lampirkan DDL yang digunakan untuk membuat schema dan sepuluh tabe
 **Script DDL yang digunakan:**
 
 ```sql
--- Tempelkan DDL pembuatan schema dan tabel di sini.
--- Pastikan seluruh tabel dibuat sesuai spesifikasi bahan praktikum.
+--2. Membuat dan Memverivikasi Source Layer
+---2.1 Membuat schema dan tabel
+---- 1. Membuat schema src
+CREATE SCHEMA IF NOT EXISTS src;
+
+---- 2. Membuat sepuluh tabel sumber 
+----- Membuat tabel program_studi
+CREATE TABLE IF NOT EXISTS src.program_studi (
+    kode_prodi TEXT,
+    nama_prodi TEXT,
+    fakultas TEXT,
+    departemen TEXT,
+    status TEXT
+);
+
+----- Membuat tabel semester
+CREATE TABLE IF NOT EXISTS src.semester (
+    semester_id TEXT,
+    tahun_akademik TEXT,
+    term TEXT,
+    urutan_tahun INTEGER,
+    tanggal_mulai TEXT,
+    tanggal_selesai TEXT
+);
+
+----- Membuat tabel mahasiswa
+CREATE TABLE IF NOT EXISTS src.mahasiswa (
+    nim TEXT,
+    nama TEXT,
+    jk_raw TEXT,
+    tanggal_lahir_raw TEXT,
+    kota_asal_raw TEXT,
+    kode_prodi_raw TEXT,
+    prodi_raw TEXT,
+    angkatan TEXT,
+    tanggal_masuk_raw TEXT,
+    status_raw TEXT,
+    email_kampus TEXT
+);
+
+----- Membuat tabel dosen
+CREATE TABLE IF NOT EXISTS src.dosen (
+    nidn TEXT,
+    nama_dosen TEXT,
+    jk_raw TEXT,
+    unit_prodi_raw TEXT,
+    jabatan_akademik TEXT,
+    tanggal_masuk_raw TEXT,
+    status TEXT
+);
+
+----- Membuat tabel mata_kuliah
+CREATE TABLE IF NOT EXISTS src.mata_kuliah (
+    kode_mk TEXT,
+    nama_mk TEXT,
+    kode_prodi TEXT,
+    sks INTEGER,
+    semester_rekomendasi INTEGER,
+    kategori TEXT,
+    aktif TEXT
+);
+
+----- Membuat tabel krs
+CREATE TABLE IF NOT EXISTS src.krs (
+    krs_id TEXT,
+    nim TEXT,
+    kode_mk TEXT,
+    semester_id TEXT,
+    kelas TEXT,
+    status_krs TEXT,
+    tanggal_ambil_raw TEXT,
+    sumber_sistem TEXT
+);
+
+----- Membuat tabel nilai
+CREATE TABLE IF NOT EXISTS src.nilai (
+    nilai_id TEXT,
+    nim TEXT,
+    kode_mk TEXT,
+    semester_id TEXT,
+    nilai_angka NUMERIC(6,2),
+    nilai_huruf TEXT,
+    status_lulus TEXT,
+    tanggal_input_raw TEXT
+);
+
+----- 9. Membuat tabel aktivitas_lms
+CREATE TABLE IF NOT EXISTS src.aktivitas_lms (
+    lms_event_id TEXT,
+    nim TEXT,
+    kode_mk TEXT,
+    semester_id TEXT,
+    waktu_event TEXT,
+    tipe_event TEXT,
+    durasi_menit INTEGER,
+    skor_kuis NUMERIC(6,2),
+    platform TEXT
+);
+
+----- Membuat tabel pembayaran
+CREATE TABLE IF NOT EXISTS src.pembayaran (
+    pembayaran_id TEXT,
+    nim TEXT,
+    semester_id TEXT,
+    tanggal_bayar_raw TEXT,
+    nominal_tagihan BIGINT,
+    nominal_bayar BIGINT,
+    status_pembayaran TEXT,
+    kanal TEXT
+);
+
+----- Membuat tabel kelulusan
+CREATE TABLE IF NOT EXISTS src.kelulusan (
+    kelulusan_id TEXT,
+    nim TEXT,
+    tanggal_lulus_raw TEXT,
+    ipk_final NUMERIC(4,2),
+    masa_studi_bulan INTEGER,
+    predikat TEXT,
+    status_tepat_waktu TEXT
+);
 ```
 
 **Bukti eksekusi / hasil:**
 
-[Tempelkan tangkapan layar atau keluaran eksekusi DDL di sini]
+<img width="643" height="424" alt="image" src="https://github.com/user-attachments/assets/1b3fc9df-9dcf-4957-a115-20b8ba83cd41" />
+
+<img width="642" height="408" alt="image" src="https://github.com/user-attachments/assets/246f5127-3305-4181-814e-4a9402b3c790" />
+
+
 
 **Catatan:** Perintah `DROP TABLE` dapat menghapus tabel beserta isinya. Gunakan hanya apabila memang diperlukan dalam persiapan praktikum dan pastikan tidak menghapus data yang masih dibutuhkan.
 
@@ -149,9 +269,17 @@ Tuliskan atau lampirkan DDL yang digunakan untuk membuat schema dan sepuluh tabe
 
 Dataset UADW v1.0 terdiri atas sepuluh file CSV. Data dimuat ke tabel yang sesuai dengan mempertahankan nilai raw, tanpa cleaning, standardisasi, atau deduplikasi.
 
-### 3.1 Perintah impor CSV
+### 3.1 Perintah impor CSV melalui DBeaver
 
-Sesuaikan `/PATH/UADW_v1.0/` dengan lokasi dataset pada komputer masing-masing.
+Sepuluh file CSV diimpor menggunakan fitur Import Data pada DBeaver karena praktikum dijalankan melalui DBeaver di Windows. Perintah \copy merupakan perintah khusus psql sehingga tidak dijalankan pada SQL Editor DBeaver.
+
+Langkah impor yang dilakukan:
+
+1. Klik kanan tabel tujuan pada schema src, lalu pilih Import Data.
+2. Pilih sumber CSV dan tentukan file yang sesuai dari folder 01_raw_data.
+3. Pastikan encoding UTF-8, delimiter koma, dan opsi header aktif.
+4. Periksa preview serta pemetaan kolom sumber ke kolom tujuan.
+5. Klik Proceed dan tunggu sampai proses selesai.
 
 ```sql
 \copy src.program_studi FROM '/PATH/UADW_v1.0/01_raw_data/program_studi.csv' CSV HEADER ENCODING 'UTF8';
