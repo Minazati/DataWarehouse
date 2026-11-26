@@ -49,9 +49,8 @@ SELECT version();
 
 **Hasil eksekusi:**
 
-```text
-<img width="496" height="221" alt="image" src="https://github.com/user-attachments/assets/55a2c0bf-1e1b-411a-bb60-eba2417550a1" />
-```
+<img width="496" height="221" alt="Screenshot 2026-11-25 230532" src="https://github.com/user-attachments/assets/a08af55c-1b6c-4d11-aecd-9a02a857e215" />
+
 
 ### 1.2 Memeriksa database dan user aktif
 
